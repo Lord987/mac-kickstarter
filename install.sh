@@ -12,6 +12,7 @@ cd /usr/local/etc/bash_completion.d \
     && ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion \
     && ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
 
-brew cask install emacs
-brew install httpie
-brew install pass
+brew cask install emacs tunnelblick
+#brew cask install vivaldi
+brew install httpie pass go
+#brew install node
