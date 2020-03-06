@@ -28,12 +28,18 @@ export EDITOR='emacs -nw'
 PATH=$PATH:~/bin
 
 ## ALIASES ##
+# Kubernetes
 alias k='kubectl'
 alias kn='kubens'
 alias kctx='kubectx'
 alias kc='kubectl create'
 alias kcf='kubectl create -f'
+alias kaf='kubectl apply -f'
+alias kak='kubectl apply -k'
+alias kdifff='kubectl diff -f'
+alias kdiffk='kubectl diff -k'
 alias kg='kubectl get'
+alias kgy='kubectl get -oyaml'
 alias kga='kubectl get all'
 alias kd='kubectl describe'
 alias kdd='kubectl describe deployments'
@@ -43,3 +49,8 @@ alias kex='kubectl exec -i -t --request-timeout=0'
 alias kl='kubectl logs --tail 100 -f'
 alias kla='kubectl logs --tail 100 -f --all-containers=true  --selector'
 alias expkc='export KUBECONFIG='
+
+# Drone
+alias doa='drone orgsecret add'
+alias dss='drone sign --save'
+alias clean-drone="kubectl get jobs -n drone --no-headers=true | awk '/drone-job-*/{print $1}'| xargs kubectl delete -n drone job"

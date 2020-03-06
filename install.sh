@@ -18,5 +18,6 @@ ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.zsh-complet
 
 brew cask install emacs tunnelblick
 #brew cask install vivaldi
-brew install httpie pass go zsh-completion kubectx kube-ps1 kustomize
-#brew install node
+brew install httpie pass go zsh-completion kubectx kube-ps1 kustomize awscli drone-cli helm istioctl mongodb-community-shell \
+    pulumi
+#brew install node kops
