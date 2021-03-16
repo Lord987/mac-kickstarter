@@ -12,7 +12,9 @@ setopt appendhistory
 KUBE_PS1_SYMBOL_ENABLE=false
 
 source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh"
-PROMPT='%B%F{166}%1~%f%b - $(kube_ps1) %# %F{7}'
+#166
+#051
+PROMPT='%B%F{226}%1~%f%b - $(kube_ps1) %# %F{7}'
 #PS1='$(kube_ps1)'$PS1
 
 autoload -Uz vcs_info
@@ -41,6 +43,7 @@ alias kdiffk='kubectl diff -k'
 alias kg='kubectl get'
 alias kgy='kubectl get -oyaml'
 alias kga='kubectl get all'
+alias kgal='kubectl get all --all-namespaces -l'
 alias kd='kubectl describe'
 alias kdd='kubectl describe deployments'
 alias kdc='kubectl describe certificate'
@@ -48,9 +51,15 @@ alias ke='kubectl edit'
 alias kex='kubectl exec -i -t --request-timeout=0'
 alias kl='kubectl logs --tail 100 -f'
 alias kla='kubectl logs --tail 100 -f --all-containers=true  --selector'
+alias kjef='kubectl create job --from=cronjob/' #jobname manualjobname
 alias expkc='export KUBECONFIG='
+
+alias manifest='cd ~/Documents/Projects/manifests/'
 
 # Drone
 alias doa='drone orgsecret add'
 alias dss='drone sign --save'
+
 alias clean-drone="kubectl get jobs -n drone --no-headers=true | awk '/drone-job-*/{print $1}'| xargs kubectl delete -n drone job"
+
+alias ggr="git config --get remote.origin.url"
