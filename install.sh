@@ -10,7 +10,7 @@ brew tap instrumenta/instrumenta
 
 brew install --cask emacs tunnelblick ajour altair-graphql-client postman docker vivaldi visual-studio-code slack discord
 brew install httpie pass go zsh-completions kubectx kube-ps1 kustomize aws-iam-authenticator awscli drone-cli helm istioctl mongodb-community-shell \
-    mongodb-database-tools conftest kubeval yamllint opa sops flux jq node@12
+    mongodb-database-tools conftest kubeval yamllint opa sops fluxcd/tap/flux jq node@14 curl
 #brew install node kops
 
-brew unlink node && brew link node@12
+brew link node@14
